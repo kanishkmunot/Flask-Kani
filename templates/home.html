@@ -12,15 +12,15 @@
     <style>
         h1 {
             text-align: center;
-            font-size: 40px;
+            font-size: 30px; /* Adjusted font size for phones */
             font-family: Arial, Helvetica, sans-serif;
             font-weight: bold;
-        padding-top: 2%;
+            padding-top: 2%;
         }
 
         h2 {
             text-align: center;
-            font-size: 40px;
+            font-size: 30px; /* Adjusted font size for phones */
             font-family: Arial, Helvetica, sans-serif;
             font-weight: bold;
             padding-top: 3%;
@@ -47,11 +47,18 @@
             padding: 2% 0% 0% 13%;
         }
 
+        /* Footer Styles */
+        footer {
+            background-color: #343a40; /* Dark background color */
+            color: #fff; /* Text color */
+            padding: 1% 0; /* Adjusted footer height */
+        }
+
     </style>
 </head>
 <body>
-    
-  {% include 'nav.html' %}
+    {% include 'nav.html' %}
+
 <h1>Aspire Career</h1>
 <img src="{{ url_for('static', filename='career.jpg') }}" alt="Description of the image" class="centered">
 <h2>About</h2>
@@ -68,17 +75,22 @@
 <div class="container">
     {% for job in jobs %}
         <div class="row job-openings border-bottom">
-            <div class="col-md-9">
+            <div class="col-md-9 col-12"> <!-- Use col-12 for mobile -->
                 <div><h3>{{job['title']}}</h3></div>
                 <div><b>Location:</b> {{job['location']}}</div>
                 <div><b>Salary:</b> {{job['salary']}}</div>
             </div>
-            <div class="col-md-3 apply">
+            <div class="col-md-3 col-12 apply"> <!-- Use col-12 for mobile -->
                 <button type="button" class="btn btn-primary">Apply</button>
             </div>
         </div>
     {% endfor %}
 </div>
+
+<!-- Footer -->
+<footer class="bg-dark text-light text-center py-2"> <!-- Adjusted footer height -->
+    <p>&copy; 2023 Kanishk Munot</p>
+</footer>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
