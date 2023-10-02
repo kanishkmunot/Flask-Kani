@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        h1{
+            padding-top: 1%;
+            text-align: center;
+            font-size: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: normal;
+        }
+        h2{
+            padding-top: 2%;
+            text-align: center;
+            font-size: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: normal;
+        }
+        img.centered {
+            display: block;
+            margin: 0 auto;
+            padding-top: 1%;
+        }
+     
+        p{
+            text-align: center;
+            padding: 1% 15% 0% 15%;
+        }
+        .job-openings{
+            padding: 1% 8% 1% 8%;
+        }
+        .apply{
+            padding: 2% 0% 0% 13%;
+        }
+
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+   
+    <h1>Aspire Career</h1>
+    <img src="{{ url_for('static', filename='career.jpg') }}" alt="Description of the image" width="800" height="550" class="centered">
+    <h2>About</h2>
+
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente eligendi quas non quis accusamus, cum sequi architecto labore numquam. Laboriosam tempora aspernatur mollitia laborum. Nesciunt fuga dolorum autem architecto ratione laborum nobis neque, fugiat natus porro cum dignissimos unde dicta ad officiis. Deserunt minus consectetur, dignissimos iste et pariatur, laborum nihil quos dolorem accusamus dolor possimus cum molestias provident, accusantium illum magnam voluptate consequuntur. Autem, sit. Autem placeat tenetur sunt sed esse ipsam tempora, officia vitae totam atque aspernatur adipisci sequi pariatur ad, officiis labore libero? Aspernatur minima aut, pariatur repellat reprehenderit consequatur, veniam iure hic porro totam, molestias officia.</p>
+
+    <h2>Open Positions</h2>
+    <p>
+        
+        {% for job in jobs %}
+    <div class="row job-openings border-bottom">
+        <div class="col-9">
+            <div><h3>{{job['title']}}</h3></div>
+            <div><b>Location:</b> {{job['location']}}</div>
+            <div><b>Salary:</b> {{job['salary']}}</div>  
+        </div>
+        <div class="col-3 apply">
+            <button type="button" class="btn btn-primary">Apply</button>
+        </div>
+    </div>
+    {% endfor %}
+        
+    </p>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
