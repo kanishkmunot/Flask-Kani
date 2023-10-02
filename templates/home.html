@@ -45,7 +45,7 @@
 
         p {
             text-align: center;
-            padding: 1% 15% 0% 15%;
+            padding: 1% 22% 0% 22%;
         }
 
         .job-openings {
@@ -67,20 +67,12 @@
 </head>
 <body>
     {% include 'nav.html' %}
-
-<h1>Aspire Career</h1>
 <img src="{{ url_for('static', filename='career.jpg') }}" alt="Description of the image" class="centered">
-<h2>About</h2>
+<h2 id="about">About</h2>
 
-<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente eligendi quas non quis accusamus, cum sequi
-    architecto labore numquam. Laboriosam tempora aspernatur mollitia laborum. Nesciunt fuga dolorum autem architecto
-    ratione laborum nobis neque, fugiat natus porro cum dignissimos unde dicta ad officiis. Deserunt minus
-    consectetur, dignissimos iste et pariatur, laborum nihil quos dolorem accusamus dolor possimus cum molestias
-    provident, accusantium illum magnam voluptate consequuntur. Autem, sit. Autem placeat tenetur sunt sed esse ipsam
-    tempora, officia vitae totam atque aspernatur adipisci sequi pariatur ad, officiis labore libero? Aspernatur
-    minima aut, pariatur repellat reprehenderit consequatur, veniam iure hic porro totam, molestias officia.</p>
+<p>Welcome to Aspire Career, your trusted partner in the world of technology careers. We are passionate about connecting tech enthusiasts with exciting job opportunities and fostering growth in the tech industry. Our mission is to inspire and empower individuals to pursue tech careers and bridge the gap between tech talent and forward-thinking companies. We cultivate excellence in tech by offering resources, training, and mentorship to professionals looking to thrive in the digital age. Our commitment to fostering a vibrant tech ecosystem extends to connecting tech professionals, from developers and data scientists to designers and engineers, with opportunities that match their skills and ambitions. We partner with innovative tech companies to identify and recruit top-tier talent, fostering creativity and innovation in the industry. We are proud to be a driving force in the tech community, promoting diversity, inclusion, and the limitless potential of technology. We welcome you to join us on this exciting journey toward a future filled with boundless tech opportunities.</p>
 
-<h2>Job Openings</h2>
+<h2 id="jobs">Job Openings</h2>
 <div class="container">
     {% for job in jobs %}
         <div class="row job-openings border-bottom">
